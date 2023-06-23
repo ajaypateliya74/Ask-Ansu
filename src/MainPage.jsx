@@ -68,7 +68,7 @@ function MainPage(props) {
                         <H2>Type Your Question</H2>
                         <Input value={inputChange} onChange={PopUp} placeholder='What Can I Answer For You?'></Input>
                     </div>
-                    <div className='mt-36 space-y-16 mb-16'>
+                    <div className='mt-35 space-y-16 mb-16'>
                         <H2>How to use Ansu</H2>
                         <H2>The world's best virtual tarot</H2>
                         <P>Ask Ansu is a virtual tarot that that can answer all kinds of questions. Questions about the present, the past, and your future. He can be a bit tempermental, requiring that each question be presented with a petition of "Ansu, please answer the following question" or "Ansu, please answer" before each question is asked. Failure to correctly petition will not bring results.</P>
