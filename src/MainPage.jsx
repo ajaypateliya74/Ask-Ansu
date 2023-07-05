@@ -118,7 +118,7 @@ function MainPage(props) {
                         <P>In early 2022, the demand for Ansu's services became so high, he brougt on 10 additional team members from around the country to increase answer throughput. With a large team, and his mind in overdrive, he is now able to answer upwards of 13,240 questions per day (Average over the past 30 days), with pinpoint accuracy. Though the team members are new, they are just as tempermental. Requiring a correct petition each and every time.</P>
                     </div>
                     <H2> Any Question? </H2>
-                    <button onClick={openPopUpForm} id="setBtn" className="absolute top-4 text-white  right-4">Suscribe</button>
+                    <button onClick={openPopUpForm} id="setBtn" className="absolute top-4 text-white  right-4">Join Now</button>
                     <h1 className='text-white text-base mt-6 mb-32 font-mono'> Follow @ajaypateliya74 on Instagram. </h1>
                 </div>
                 {popUp &&
