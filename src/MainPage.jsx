@@ -19,6 +19,46 @@ function MainPage(props) {
 
     const [inputChange, updateInputChange] = React.useState('');
 
+    const [popUpForm, showPopUpForm] = React.useState(false);
+
+    const openPopUpForm = () => {
+        showPopUpForm(true);
+    };
+
+    const removePopUpForm = () => {
+        showPopUpForm(false);
+    };
+
+    const [formName, setFormName] = React.useState('');
+    const [formEmail, setFormEmail] = React.useState('');
+    const [formPassword, setFormPassword] = React.useState('');
+
+    const handleNameChange = event => {
+        setFormName(event.target.value);
+    };
+
+    const handleEmailChange = event => {
+        setFormEmail(event.target.value);
+    };
+
+    const handlePasswordChange = event => {
+        setFormPassword(event.target.value);
+    };
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log('Name:', formName);
+        console.log('Email:', formEmail);
+        console.log('Password:', formPassword);
+
+        setFormName('');
+        setFormEmail('');
+        setFormPassword('');
+
+        showPopUpForm(false);
+    };
+
+
     const onPetitionChange = event => {
         const newPetition = event.target.value;
 
@@ -78,6 +118,7 @@ function MainPage(props) {
                         <P>In early 2022, the demand for Ansu's services became so high, he brougt on 10 additional team members from around the country to increase answer throughput. With a large team, and his mind in overdrive, he is now able to answer upwards of 13,240 questions per day (Average over the past 30 days), with pinpoint accuracy. Though the team members are new, they are just as tempermental. Requiring a correct petition each and every time.</P>
                     </div>
                     <H2> Any Question? </H2>
+                    <button onClick={openPopUpForm} id="setBtn" className="absolute top-4 text-white  right-4">Suscribe</button>
                     <h1 className='text-white text-base mt-6 mb-32 font-mono'> Follow @ajaypateliya74 on Instagram. </h1>
                 </div>
                 {popUp &&
@@ -89,6 +130,65 @@ function MainPage(props) {
                         </div>
                     </div>}
             </div>
+
+            {popUp && (
+                <div className="fixed flex justify-center items-center top-0 left-0 h-screen w-screen">
+                    <div className="bg-black opacity-90 flex flex-col p-8 text-white w-2/5 h-40">
+                        <button onClick={removePopUp} className="flex justify-end underline underline-offset-4">new Question</button>
+                        <h1 className="text-xl font-semibold border-b mx-12 mt-6  decoration-white flex justify-center">Ansu's Answer</h1>
+                        <h1 className="flex justify-center mt-3 text-xl font-semibold">'{answer || 'You are not honest so I am not going to answer you.'}'</h1>
+                    </div>
+                </div>
+            )}
+
+            {popUpForm && (
+                <div className="fixed flex justify-center items-center top-0 left-0 h-screen w-screen">
+                    <div className="bg-white flex flex-col p-8 text-black w-2/5 rounded-lg shadow-lg">
+                        <button onClick={removePopUpForm} className="flex justify-end text-black underline underline-offset-4">
+                            Close
+                        </button>
+                        <h1 className="text-xl text-black font-semibold border-b mx-12 mt-6 flex justify-center">
+                            Fill The Form
+                        </h1>
+                        <form onSubmit={handleSubmit} className="flex flex-col space-y-4 mt-6">
+                            <label className="flex flex-col">
+                                <span className="text-black">Name:</span>
+                                <input
+                                    type="text"
+                                    className="border rounded-lg px-3 py-2"
+                                    value={formName}
+                                    onChange={handleNameChange}
+                                />
+                            </label>
+                            <label className="flex flex-col">
+                                <span className="text-black">Email:</span>
+                                <input
+                                    type="email"
+                                    className="border rounded-lg px-3 py-2"
+                                    value={formEmail}
+                                    onChange={handleEmailChange}
+                                />
+                            </label>
+                            <label className="flex flex-col">
+                                <span className="text-black">Password:</span>
+                                <input
+                                    className="border rounded-lg px-3 py-2"
+                                    type="password"
+                                    value={formPassword}
+                                    onChange={handlePasswordChange}
+                                />
+                            </label>
+                            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg py-2">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            )}
+
+
+
         </>
     )
 }
