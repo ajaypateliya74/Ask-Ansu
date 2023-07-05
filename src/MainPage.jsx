@@ -155,6 +155,7 @@ function MainPage(props) {
                                 <span className="text-black">Name:</span>
                                 <input
                                     type="text"
+                                    name="name"
                                     className="border rounded-lg px-3 py-2"
                                     value={formName}
                                     onChange={handleNameChange}
@@ -163,6 +164,7 @@ function MainPage(props) {
                             <label className="flex flex-col">
                                 <span className="text-black">Email:</span>
                                 <input
+                                    name="email"
                                     type="email"
                                     className="border rounded-lg px-3 py-2"
                                     value={formEmail}
@@ -172,6 +174,7 @@ function MainPage(props) {
                             <label className="flex flex-col">
                                 <span className="text-black">Password:</span>
                                 <input
+                                    name="password"
                                     className="border rounded-lg px-3 py-2"
                                     type="password"
                                     value={formPassword}
