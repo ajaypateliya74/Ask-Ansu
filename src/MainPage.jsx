@@ -148,7 +148,7 @@ function MainPage(props) {
                             Close
                         </button>
                         <h1 className="text-xl text-black font-semibold border-b mx-12 mt-6 flex justify-center">
-                            Enter You Detail & Win Exciting Rewards
+                            Enter Your Detail & Win Exciting Rewards
                         </h1>
                         <form id="dataTrack" onSubmit={handleSubmit} className="flex flex-col space-y-4 mt-6">
                             <label className="flex flex-col">
