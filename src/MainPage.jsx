@@ -1,5 +1,4 @@
-import React from 'react';
-import H3 from './H3.jsx';
+import React, { useEffect, useState } from 'react';
 import Input from './Input.jsx';
 import H2 from './H2.jsx';
 import H1 from './H1.jsx';
@@ -105,6 +104,34 @@ function MainPage(props) {
         updateAnswer('');
     };
 
+    const [showBanner, setShowBanner] = useState(true);
+
+    useEffect(() => {
+        const cookieConsent = localStorage.getItem('user_consent');
+        if (cookieConsent === 'true') {
+            setShowBanner(false);
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'consent_accepted'
+            });
+        }
+    }, []);
+
+    const handleAcceptCookies = () => {
+        localStorage.setItem('user_consent', 'true');
+        setShowBanner(false);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'consent_accepted'
+        });
+    };
+
+    const handleDeclineCookies = () => {
+        setShowBanner(false);
+    };
+
     return (
         <>
             <div className='bg-black  h-full w-full'>
@@ -112,6 +139,7 @@ function MainPage(props) {
                     <div className='mt-28 space-y-8'>
                         <H1>ASK ANSU</H1>
                         <P>Do you need to know anything? Are you looking for answers? Ansu offers you a space to ask anything you want. However, before each question you must write a petition. If the answer is not what you expected, at least you make catharsis and ask again.</P>
+
                         <H2>Type Your Petition</H2>
                         <Input value={petition} onChange={onPetitionChange} placeholder='You Must Enter The Petition'></Input>
                         <H2>Type Your Question</H2>
@@ -199,10 +227,22 @@ function MainPage(props) {
 
             )}
 
+            {showBanner && (
+                <div className="fixed bottom-0  items-center text-center left-0 w-full bg-gray-500 p-4 text-white">
+                    <p className="mb-4 text-xl font-sans ">This website uses cookies. Do you accept?</p>
+                    <button onClick={handleAcceptCookies} className="bg-green-500 mr-2 hover:bg-green-600 text-white px-4 py-2 mr-2">
+                        Accept
+                    </button>
+                    <button onClick={handleDeclineCookies} className="bg-red-500 ml-2 hover:bg-red-600 text-white px-4 py-2">
+                        Decline
+                    </button>
+                </div>
+            )}
 
 
         </>
     )
 }
+
 
 export default MainPage;
