@@ -47,9 +47,18 @@ function MainPage(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
+
         console.log('Name:', formName);
         console.log('Email:', formEmail);
         console.log('Password:', formPassword);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'formSubmission',
+            formName: formName,
+            formEmail: formEmail,
+            formPassword: formPassword
+        });
 
         setFormName('');
         setFormEmail('');
