@@ -24,12 +24,12 @@ function MainNav(props) {
             console.log(subHeading);
 
 
-             window.dataLayer.push({
-      event: 'navbar_click',
-      event_label: 'Navbar',
-      clicked_heading: heading,
-      clicked_sub_heading: subHeading
-    });
+            window.dataLayer.push({
+                event: 'navbar_click',
+                event_label: 'Navbar',
+                clicked_heading: heading,
+                clicked_sub_heading: subHeading
+            });
 
 
             // window.gtag('event', 'navbar_click', {
@@ -58,7 +58,7 @@ function MainNav(props) {
         <nav className="bg-white py-8 fixed w-full">
             <ul className="flex space-x-72 font-bold text-lg justify-center">
                 <li
-                    className="text-black relative"
+                    className="text-black custom-width relative "
                     onClick={() => handleClick('HOME', '')}
                 >
                     <span>HOME</span>
@@ -86,7 +86,7 @@ function MainNav(props) {
                     )}
                 </li>
                 <li
-                    className="text-black relative"
+                    className="text-black relative custom-width"
                     onClick={() => handleClick('ABOUT', '')}
                 >
                     <span>ABOUT</span>
@@ -108,7 +108,7 @@ function MainNav(props) {
                     )}
                 </li>
                 <li
-                    className="text-black relative"
+                    className="text-black relative custom-width"
                     onClick={() => handleClick('CONTACT', '')}
                 >
                     <span>CONTACT</span>
@@ -142,7 +142,7 @@ function MainNav(props) {
                     )}
                 </li>
                 <li
-                    className="text-black relative"
+                    className="text-black relative custom-width"
                     onClick={() => handleClick('PREMIUM', '')}
                 >
                     <span>PREMIUM</span>
