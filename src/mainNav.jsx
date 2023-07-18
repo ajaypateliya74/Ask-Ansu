@@ -64,19 +64,19 @@ function MainNav(props) {
                     <span>HOME</span>
                     {activeDropdown === 'HOME' && (
                         <ul className="absolute -left-32 top-12 p-32 bg-white shadow-lg py-4 font-bold space-y-8">
-                            <li
+                            <li id="sub_heading"
                                 className="custom-width text-black cursor-pointer"
                                 onClick={() => handleClick('HOME', 'ASK ME')}
                             >
                                 ASK ME
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('HOME', 'ASK ANSU')}
                             >
                                 ASK ANSU
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('HOME', 'ASK ADAM')}
                             >
@@ -92,13 +92,13 @@ function MainNav(props) {
                     <span>ABOUT</span>
                     {activeDropdown === 'ABOUT' && (
                         <ul className="absolute -left-32 top-12 p-32 bg-white shadow-lg py-4 font-bold space-y-8">
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('ABOUT', 'About ME')}
                             >
                                 ABOUT ME
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('ABOUT', 'About ANSU')}
                             >
@@ -114,25 +114,25 @@ function MainNav(props) {
                     <span>CONTACT</span>
                     {activeDropdown === 'CONTACT' && (
                         <ul className="absolute -left-32 top-12 p-32 bg-white shadow-lg py-4 font-bold space-y-8">
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('CONTACT', 'EMAIL ME')}
                             >
                                 EMAIL ME
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('CONTACT', 'CALL ME')}
                             >
                                 CALL ME
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('CONTACT', 'FOLLOW ME')}
                             >
                                 FOLLOW ME
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('CONTACT', 'SLACK ME')}
                             >
@@ -148,13 +148,13 @@ function MainNav(props) {
                     <span>PREMIUM</span>
                     {activeDropdown === 'PREMIUM' && (
                         <ul className="absolute -left-32 top-12 p-32 bg-white shadow-lg py-4 font-bold space-y-8">
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('PREMIUM', 'SILVER PREMIUM')}
                             >
                                 SILVER PREMIUM
                             </li>
-                            <li
+                            <li id="sub_heading"
                                 className="text-black custom-width cursor-pointer"
                                 onClick={() => handleClick('PREMIUM', 'GOLD PREMIUM')}
                             >
