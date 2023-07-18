@@ -24,6 +24,14 @@ function MainNav(props) {
             console.log(subHeading);
 
 
+             window.dataLayer.push({
+      event: 'navbar_click',
+      event_label: 'Navbar',
+      clicked_heading: heading,
+      clicked_sub_heading: subHeading
+    });
+
+
             // window.gtag('event', 'navbar_click', {
             //     event_label: 'Navbar',
             //     clicked_heading: heading,
