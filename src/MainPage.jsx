@@ -254,7 +254,7 @@ function MainPage(props) {
             )}
 
             {alertVisible && (
-                <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white p-10 mx-auto rounded shadow text-center text-lg z-500 animate-fade-out">
+                <div id='thankyou_message' className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white p-10 mx-auto rounded shadow text-center text-lg z-500 animate-fade-out">
                     Thank you for joining us!
                 </div>
             )}
