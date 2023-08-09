@@ -22,6 +22,8 @@ function MainPage(props) {
     const [popUpForm, showPopUpForm] = React.useState(false);
 
     const openPopUpForm = () => {
+        <script src="https://assets.zuko.io/js/v2/client.min.js"></script>
+        Zuko.trackForm({ target: document.getElementById('dataTrack'), slug: '379ca71d3555631f' }).trackEvent(Zuko.FORM_VIEW_EVENT)
         showPopUpForm(true);
     };
 
@@ -65,6 +67,9 @@ function MainPage(props) {
         setFormPassword('');
 
         showPopUpForm(false);
+
+        <script src="https://assets.zuko.io/js/v2/client.min.js"></script>
+        Zuko.trackForm({ slug: '379ca71d3555631f' }).trackEvent(Zuko.COMPLETION_EVENT)
     };
 
 
@@ -174,6 +179,7 @@ function MainPage(props) {
             </div>
 
             {popUp && (
+
                 <div className="fixed flex justify-center items-center top-0 left-0 h-screen w-screen">
                     <div className="bg-black opacity-90 flex flex-col p-8 text-white w-2/5 h-40">
                         <button onClick={removePopUp} className="flex justify-end underline underline-offset-4">new Question</button>
