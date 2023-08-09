@@ -162,7 +162,7 @@ function MainPage(props) {
                     <H2> Any Question? </H2>
                     <button onClick={openPopUpForm} id="setBtn" className="p-8 text-white font-bold text-2xl absolute top-20 right-2">Join Now</button>
 
-                    <h1 className='text-white text-base mt-6 mb-32 font-mono'> Follow @ajaypateliya74 on Instagram. </h1>
+                    <h1 id='instagram_id' className='text-white text-base mt-6 mb-32 font-mono'> Follow @ajaypateliya74 on Instagram. </h1>
                 </div>
                 {popUp &&
                     <div className="fixed flex justify-center items-center top-0 left-0 h-screen w-screen">
