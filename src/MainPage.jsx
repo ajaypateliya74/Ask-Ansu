@@ -21,6 +21,8 @@ function MainPage(props) {
 
     const [popUpForm, showPopUpForm] = React.useState(false);
 
+    const [alertVisible, setAlertVisible] = useState(false);
+
     const openPopUpForm = () => {
         showPopUpForm(true);
     };
@@ -65,6 +67,12 @@ function MainPage(props) {
         setFormPassword('');
 
         showPopUpForm(false);
+
+        setAlertVisible(true);
+
+        setTimeout(() => {
+            setAlertVisible(false);
+        }, 2000);
 
     };
 
@@ -242,6 +250,12 @@ function MainPage(props) {
                     <button onClick={handleDeclineCookies} className="bg-red-500 ml-2 hover:bg-red-600 text-white px-4 py-2">
                         Decline
                     </button>
+                </div>
+            )}
+
+            {alertVisible && (
+                <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white p-10 mx-auto rounded shadow text-center text-lg z-500 animate-fade-out">
+                    Thank you for joining us!
                 </div>
             )}
 
